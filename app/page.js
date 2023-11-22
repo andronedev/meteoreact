@@ -98,7 +98,7 @@ export default function Home() {
                   loading ? {display: "block"} : {display: "none"}
                 } className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-[#ffba49]"></div>
 
-            <div className="flex flex-row items-between justify-evenly gap-10" style={
+            <div className="flex flex-row items-between justify-evenly gap-10 select-none" style={
                 {
                     display: loaded ? "flex" : "none"
                 }
@@ -139,7 +139,7 @@ export default function Home() {
                     {
                     forecastWeather && forecastWeather.forecast.forecastday.map((day, index) => {
                         return (
-                            <div key={index} className="w-3/6 h-80 flex flex-col items-center justify-around backdrop-blur-lg p-5 rounded-2xl bg-white bg-opacity-30 shadow-2xl">
+                            <div key={index} className="w-3/6 h-80 flex flex-col items-center justify-between backdrop-blur-lg p-5 rounded-2xl bg-white bg-opacity-30 shadow-2xl">
                                 <p className="text-xl font-medium mb-4">
                                     {
                                     day.date
@@ -155,7 +155,7 @@ export default function Home() {
                                     day.day.avgtemp_c
                                 }°C
                                 </p>
-                                <p className="text-xl font-medium mb-4">
+                                <p className="text-xl font-medium mb-4 text-center h-12">
                                     {
                                     day.day.condition.text
                                 } </p>
