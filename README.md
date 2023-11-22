@@ -1,4 +1,5 @@
 # Documentation Technique de l'Application React
+#### **[PROJET BTS SIO - SLAM - 2023]**
 ![Alt text](image.png)
 #### Introduction
 L'application React présentée est une application météorologique qui utilise l'API WeatherAPI.com pour obtenir des informations météorologiques actuelles et des prévisions sur trois jours pour une ville spécifique. L'application est conçue pour être simple et intuitive, offrant une expérience utilisateur agréable et efficace.
