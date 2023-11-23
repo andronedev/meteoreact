@@ -39,6 +39,11 @@ export default function Home() {
     const [suggestions, setSuggestions] = useState([]);
 
     const handleInputChange = async (e) => {
+        if (e.target.value.length === 0) {
+            setLoaded(false);
+            setCurrentWeather(null);
+            setForecastWeather(null);
+        }
         const inputText = e.target.value;
         setCity(inputText);
         if (inputText.length > 2) {
@@ -115,7 +120,7 @@ export default function Home() {
                         error && errorMessage
                     }
                 </span>
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-row items-center justify-center gap-2">
                     <div className="relative flex">
                         <input type="text"
                             value={city}
@@ -126,13 +131,19 @@ export default function Home() {
                                 }
                             }}
                             placeholder="Rechercher une ville"
-                            className="border border-gray-300 rounded-md p-2 text-black rounded-r-none h-10" />
-                        {city && (
-                            <span className="cursor-pointer bg-red-500 text-white flex items-center justify-center h-10 w-10 rounded-r-md" onClick={clearInput}>
+                            className="w-48 h-12 border border-gray-300 rounded-l-2xl py-2 px-4 text-black placeholder:text-gray-800 focus:ring-0 h-10  bg-white bg-opacity-30 shadow-2xl"
+                            
+                            />
+                        {loaded && (
+                            <span className="h-12 w-12 border border-gray-300 cursor-pointer bg-red-500 text-white flex items-center justify-center h-10 w-10 rounded-r-2xl" onClick={clearInput}>
                                 &#x2715;
                             </span>
                         )}
-
+                         {!loaded && (
+                            <button className="bg-[#1B7B78] hover:bg-[#1B7B78] text-white font-bold py-2 px-4 rounded-r-2xl h-12 border border-gray-300"
+                        onClick={handleSearch}>Rechercher</button>
+                        )}
+                       
                         <div className="absolute z-10 mt-1 mt-10 w-full rounded-md bg-white shadow-lg max-h-60 overflow-y-auto">
                             {suggestions.map((suggestion, index) => (
                                 <div key={index}
@@ -143,9 +154,7 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
-
-                    <button className="bg-[#1B7B78] hover:bg-[#1B7B78] text-white font-bold py-2 px-4 rounded-md mt-2"
-                        onClick={handleSearch}>Rechercher</button>
+                   
                 </div>
 
 
