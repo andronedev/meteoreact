@@ -154,7 +154,7 @@ export default function Page() {
                             {suggestions.map((suggestion, index) => (
                                 <div key={index}
                                     onClick={() => selectSuggestion(suggestion)}
-                                    className="cursor-pointer hover:bg-gray-100 px-4 py-2">
+                                    className="cursor-pointer hover:bg-gray-100 px-4 py-2 text-black">
                                     {suggestion}
                                 </div>
                             ))}
