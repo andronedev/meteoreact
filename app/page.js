@@ -5,14 +5,14 @@ const API_KEY = "c98004f517434b049ec152301232211"
 const API_URL = "https://api.weatherapi.com/v1/"
 
 const getCurrentWeather = async (city , lang = 'fr') => {
-    const response = await fetch(`${API_URL}current.json?key=${API_KEY}&q=${city}`)
+    const response = await fetch(`${API_URL}current.json?key=${API_KEY}&q=${city}&lang=${lang}`)
     const data = await response.json()
     console.log(data)
     return data
 }
 
 const getForecastWeather = async (city , lang = 'fr') => {
-    const response = await fetch(`${API_URL}forecast.json?key=${API_KEY}&q=${city}&days=3`)
+    const response = await fetch(`${API_URL}forecast.json?key=${API_KEY}&q=${city}&days=3&lang=${lang}`)
     const data = await response.json()
     return data
 }
