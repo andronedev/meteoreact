@@ -3,17 +3,17 @@
 ![Alt text](image.png)
 - [Accéder à l'Application](https://andronedev.github.io/meteoreact/)
 #### Introduction
-L'application React présentée est une application météorologique qui utilise l'API WeatherAPI.com pour obtenir des informations météorologiques actuelles et des prévisions sur trois jours pour une ville spécifique. L'application est conçue pour être simple et intuitive, offrant une expérience utilisateur agréable et efficace.
+L'application React présentée est une application météorologique utilisant l'API WeatherAPI.com pour obtenir des informations météorologiques actuelles et des prévisions sur trois jours pour une ville spécifique. Elle intègre désormais une fonctionnalité d'autocomplétion pour améliorer l'expérience utilisateur.
 
 #### Structure de l'Application
-- **Fonctions Asynchrones**: `getCurrentWeather(city)` et `getForecastWeather(city)` pour récupérer respectivement les données météorologiques actuelles et les prévisions.
-- **Composants d'État**: Utilisation de plusieurs hooks `useState` pour gérer l'état de l'application, y compris les données météorologiques, l'état de chargement, les erreurs, et plus.
-- **Interface Utilisateur**: L'UI est construite en utilisant des éléments de flexbox pour une disposition flexible et responsive. Des classes de style sont appliquées pour la présentation et la mise en page.
+- **Fonctions Asynchrones** : `getCurrentWeather(city)`, `getForecastWeather(city)` et `getAutocompleteSuggestions(inputText)` pour récupérer les données météorologiques actuelles, les prévisions et les suggestions de villes.
+- **Composants d'État** : Utilisation de hooks `useState` pour gérer l'état, y compris les données météorologiques, l'état de chargement, les erreurs, les suggestions d'autocomplétion, et plus.
+- **Interface Utilisateur** : UI construite avec flexbox pour une disposition flexible et responsive, avec des styles pour la présentation.
 
 #### Fonctionnalités Clés
-- **Recherche de Météo**: Permet aux utilisateurs de rechercher la météo d'une ville en utilisant l'API WeatherAPI.com.
-- **Affichage des Résultats**: Affiche les informations météorologiques actuelles et les prévisions sur trois jours.
-- **Gestion des Erreurs**: Gère les erreurs telles que les villes non trouvées ou les problèmes de réseau.
+- **Recherche de Météo avec Autocomplétion** : Les utilisateurs peuvent rechercher la météo d'une ville, avec des suggestions automatiques pour faciliter la saisie.
+- **Affichage des Résultats** : Montre les informations météorologiques actuelles et les prévisions sur trois jours.
+- **Gestion des Erreurs** : Gère les erreurs telles que les villes non trouvées ou les problèmes de réseau.
 
 #### Pourquoi Utiliser React?
 1. **Composabilité**: React facilite la création d'interfaces utilisateur complexes à partir de petits et simples composants réutilisables.
@@ -23,4 +23,8 @@ L'application React présentée est une application météorologique qui utilise
 5. **Communauté et Ressources**: Une vaste communauté et une abondance de ressources d'apprentissage et de documentation.
 
 #### Conclusion
-Cette application React démontre efficacement l'utilisation de React pour construire une application web moderne, en tirant parti de ses fonctionnalités de composabilité, de gestion d'état, et de performance pour fournir une expérience utilisateur robuste et intuitive.
+Cette application React, enrichie par la fonctionnalité d'autocomplétion, démontre la puissance de React pour créer des applications web modernes, offrant une expérience utilisateur améliorée grâce à des fonctionnalités avancées comme l'autocomplétion et une gestion efficace de l'état.
+
+#### Crédits
+- **API Météorologique** : WeatherAPI.com
+- **API d'Autocomplétion** : [API Adresse Data Gouv](https://api-adresse.data.gouv.fr/search/) pour les suggestions de villes lors de la recherche.
