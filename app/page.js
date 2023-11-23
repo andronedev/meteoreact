@@ -3,15 +3,16 @@ import { useState } from 'react'
 import DayCard from './daycard'
 const API_KEY = "c98004f517434b049ec152301232211"
 const API_URL = "https://api.weatherapi.com/v1/"
+import Link from 'next/link'
 
-const getCurrentWeather = async (city , lang = 'fr') => {
+const getCurrentWeather = async (city, lang = 'fr') => {
     const response = await fetch(`${API_URL}current.json?key=${API_KEY}&q=${city}&lang=${lang}`)
     const data = await response.json()
     console.log(data)
     return data
 }
 
-const getForecastWeather = async (city , lang = 'fr') => {
+const getForecastWeather = async (city, lang = 'fr') => {
     const response = await fetch(`${API_URL}forecast.json?key=${API_KEY}&q=${city}&days=3&lang=${lang}`)
     const data = await response.json()
     return data
@@ -109,6 +110,11 @@ export default function Page() {
                 <p className="text-xl font-medium mb-4">En utilisant l'API&nbsp;
                     <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
                 </p>
+                <p>
+                    <Link href="/info" className="text-blue-600 hover:text-blue-800 font-semibold">
+                        Météo pour 14 jours
+                    </Link>
+                </p>
 
 
                 <span className="text-red-500 font-bold mb-4" style={
@@ -132,18 +138,18 @@ export default function Page() {
                             }}
                             placeholder="Rechercher une ville"
                             className="w-48 h-12 border border-gray-300 rounded-l-2xl py-2 px-4 text-black placeholder:text-gray-800 focus:ring-0 h-10  bg-white bg-opacity-30 shadow-2xl"
-                            
-                            />
+
+                        />
                         {loaded && (
                             <span className="h-12 w-12 border border-gray-300 cursor-pointer bg-red-500 text-white flex items-center justify-center h-10 w-10 rounded-r-2xl" onClick={clearInput}>
                                 &#x2715;
                             </span>
                         )}
-                         {!loaded && (
+                        {!loaded && (
                             <button className="bg-[#1B7B78] hover:bg-[#1B7B78] text-white font-bold py-2 px-4 rounded-r-2xl h-12 border border-gray-300"
-                        onClick={handleSearch}>Rechercher</button>
+                                onClick={handleSearch}>Rechercher</button>
                         )}
-                       
+
                         <div className="absolute z-10 mt-1 mt-10 w-full rounded-md bg-white shadow-lg max-h-60 overflow-y-auto">
                             {suggestions.map((suggestion, index) => (
                                 <div key={index}
@@ -154,7 +160,7 @@ export default function Page() {
                             ))}
                         </div>
                     </div>
-                   
+
                 </div>
 
 
