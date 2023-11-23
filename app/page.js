@@ -160,7 +160,7 @@ export default function Home() {
                     display: loaded ? "flex" : "none"
                 }
             }>
-                <div className="flex flex-col items-center justify-center bg-black shadow-2xl rounded-2xl p-5 text-white w-1/4">
+                <div className="flex flex-col items-center justify-center bg-black shadow-2xl rounded-2xl p-5 text-white w-1/4 hover:shadow-none duration-150">
                     <h2 className="text-2xl font-bold mb-4">Aujourd'hui</h2>
                     <div className="flex flex-col items-center justify-center h-full">
                         <img src={

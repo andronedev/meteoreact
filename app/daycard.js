@@ -7,7 +7,7 @@ export default function DayCard(props) {
     } = props
 
     return (
-        <div className="w-3/6 h-80 flex flex-col items-center justify-between backdrop-blur-lg p-5 rounded-2xl bg-white bg-opacity-30 shadow-2xl">
+        <div className="w-3/6 h-80 flex flex-col items-center justify-between backdrop-blur-lg p-5 rounded-2xl bg-white bg-opacity-30 shadow-2xl hover:bg-white duration-150">
             <p className="text-xl font-medium mb-4">
                 {
                 day.date
