@@ -104,7 +104,7 @@ export default function Page() {
 
     return (
 
-        <main className="flex min-h-screen flex-col items-center justify-between text-black p-24 bg-[#23001E]  bg-[url(https://images7.alphacoders.com/390/390608.jpg)] background-blend-mode: multiply; bg-opacity-50">
+        <main className="flex min-h-screen flex-col items-center justify-between text-black p-24 bg-[#23001E]  bg-[url(https://cdn.discordapp.com/attachments/1169323362271641620/1177385856223420456/image.png?ex=65725106&is=655fdc06&hm=8712b18b294e92f344b4303180c8b3097aa049cfbb9ccb9c8ac4f75aebe82c9b&)] bg-no-repeat bg-cover background-blend-mode: multiply; bg-opacity-50">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-bold mb-4">La météo avec React</h1>
                 <p className="text-xl font-medium mb-4">En utilisant l'API&nbsp;

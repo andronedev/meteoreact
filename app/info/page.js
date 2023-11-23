@@ -104,7 +104,7 @@ export default function Page() {
 
     return (
 
-        <main className="flex min-h-screen flex-col items-center justify-between text-black p-24 bg-[#23001E]  bg-[url(https://images7.alphacoders.com/390/390608.jpg)] background-blend-mode: multiply; bg-opacity-50">
+        <main className="flex min-h-screen flex-col items-center justify-between text-white p-24 bg-[#23001E]  bg-[url(https://cdn.discordapp.com/attachments/1169323362271641620/1177386071600922644/image.png?ex=6572513a&is=655fdc3a&hm=e82df3105ba7b13d20ac4e252a094694be2be284b1bc876ecc6da61c98ed1421&)] bg-center bg-no-repeat bg-cover background-blend-mode: multiply; bg-opacity-50">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-bold mb-4">La météo avec React (14 jours)</h1>
                 <p className="text-xl font-medium mb-4">En utilisant l'API&nbsp;
@@ -137,7 +137,7 @@ export default function Page() {
                                 }
                             }}
                             placeholder="Rechercher une ville"
-                            className="w-48 h-12 border border-gray-300 rounded-l-2xl py-2 px-4 text-black placeholder:text-gray-800 focus:ring-0 h-10  bg-white bg-opacity-30 shadow-2xl"
+                            className="w-48 h-12 border border-gray-300 rounded-l-2xl py-2 px-4 text-white placeholder:text-gray-200 focus:ring-0 h-10  bg-white bg-opacity-30 shadow-2xl"
 
                         />
                         {loaded && (
