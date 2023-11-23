@@ -27,7 +27,7 @@ const getAutocompleteSuggestions = async (inputText) => {
 
 
 
-export default function Home() {
+export default function Page() {
     const [currentWeather, setCurrentWeather] = useState(null)
     const [forecastWeather, setForecastWeather] = useState(null)
     const [city, setCity] = useState("")
