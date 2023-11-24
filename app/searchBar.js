@@ -64,7 +64,7 @@ const SearchBar = ({onCitySelect}) => {
                         }
                     }
                     placeholder="Rechercher une ville"
-                    className="w-48 h-12 border border-gray-300 rounded-l-2xl py-2 px-4 mix-blend-exclusion  placeholder:mix-blend-exclusion  focus:ring-0 h-10  bg-white bg-opacity-30 shadow-2xl"/> {
+                    className="w-48 h-12 border border-gray-300 rounded-l-2xl py-2 px-4 mix-blend-hard-light  placeholder:text-black  focus:ring-0 h-10  bg-white bg-opacity-30 shadow-2xl"/> {
                 sent && (
                     <span className="h-12 w-12 border border-gray-300 cursor-pointer bg-red-500 text-white flex items-center justify-center h-10 w-10 rounded-r-2xl"
                         onClick={clearInput}>
