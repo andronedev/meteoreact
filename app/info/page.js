@@ -178,7 +178,7 @@ export default function Page() {
                 
                    
                 </div>
-                {loaded && <div className="flex flex-col justify-between w-3/4">
+                {loaded && <div className="flex flex-col justify-between w-3/4 mt-10">
                     <h2 className="text-2xl font-bold mb-4">La météo des 14 prochains jours à <b>{currentCity}</b></h2>
                     <div className="flex flex-row items-center justify-center gap-5">
 

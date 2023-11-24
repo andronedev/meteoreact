@@ -1,7 +1,7 @@
 export default function WeatherTable({ forecastWeather }) {
     return (
         <table className="min-w-full table-auto border-collapse shadow-lg">
-            <thead className="bg-gray-700">
+            <thead className="backdrop-blur-lg p-5 rounded-2xl bg-white bg-opacity-30 shadow-2xl hover:bg-white hover:text-black duration-50">
                 <tr>
                     <th className="p-3 text-left">Date</th>
                     <th className="p-3 text-left">Temp. Max</th>
@@ -11,7 +11,7 @@ export default function WeatherTable({ forecastWeather }) {
             </thead>
             <tbody>
                 {forecastWeather && forecastWeather.forecast.forecastday.map((day, index) => (
-                    <tr key={index} className=" bg-gray-700 border-b border-black">
+                    <tr key={index} className=" border-b border-black backdrop-blur-lg p-5 rounded-2xl bg-white bg-opacity-30 shadow-2xl hover:bg-white hover:text-black duration-50">
                         <td className="p-3">{new Date(day.date).toLocaleDateString()}</td>
                         <td className="p-3">{day.day.maxtemp_c}°C</td>
                         <td className="p-3">{day.day.mintemp_c}°C</td>
