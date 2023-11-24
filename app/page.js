@@ -18,77 +18,32 @@ const getForecastWeather = async (city, lang = 'fr') => {
     const data = await response.json()
     return data
 }
-const getAutocompleteSuggestions = async (inputText) => {
-    const response = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${inputText}&limit=5`);
-    const data = await response.json();
-    return data.features.map(feature => feature.properties.label);
-}
-
-
-
-
-
 
 export default function Page() {
     const [currentWeather, setCurrentWeather] = useState(null)
     const [forecastWeather, setForecastWeather] = useState(null)
-    const [city, setCity] = useState("")
     const [currentCity, setCurrentCity] = useState("")
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const [loading, setLoading] = useState(false)
-    const [suggestions, setSuggestions] = useState([]);
-
-    const handleInputChange = async (e) => {
-        if (e.target.value.length === 0) {
-            setLoaded(false);
-            setCurrentWeather(null);
-            setForecastWeather(null);
-        }
-        const inputText = e.target.value;
-        setCity(inputText);
-        if (inputText.length > 2) {
-            const newSuggestions = await getAutocompleteSuggestions(inputText);
-            setSuggestions(newSuggestions);
-        } else {
-            setSuggestions([]);
-        }
-    }
-
-    const selectSuggestion = (suggestion) => {
-        setCity(suggestion);
-        setSuggestions([]);
-
-    }
-
-    const clearInput = () => {
-        setCity("");
-        setSuggestions([]);
-        setCurrentWeather(null);
-        setForecastWeather(null);
-        setLoaded(false);
-
-    };
 
 
-    const handleSearch = async (city) => {
-        setCity(city)
+    const handleSearch = async (input) => {
         setLoading(true)
         setLoaded(false)
         setError(false)
         setErrorMessage("")
-        setSuggestions([])
 
-        if (!city) {
+        if (!input) {
             setError(true)
             setErrorMessage("Veuillez saisir une ville")
             setLoading(false)
             return
         }
 
-        const currentWeather = await getCurrentWeather(city)
-        const forecastWeather = await getForecastWeather(city)
+        const currentWeather = await getCurrentWeather(input)
+        const forecastWeather = await getForecastWeather(input)
 
         // verification de la réponse de l'API
         if (currentWeather.error) {
@@ -97,7 +52,7 @@ export default function Page() {
             setLoading(false)
             return
         }
-        setCurrentCity(city)
+        setCurrentCity(input)
         setCurrentWeather(currentWeather)
         setForecastWeather(forecastWeather)
         setLoaded(true)
